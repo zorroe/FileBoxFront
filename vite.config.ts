@@ -8,6 +8,11 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': resolve('./src'),
+    }
+  },
   plugins: [vue(),
   tailwindcss(),
   AutoImport({
@@ -15,10 +20,6 @@ export default defineConfig({
   }),
   Components({
     resolvers: [ElementPlusResolver()],
-  }),],
-  resolve: {
-    alias: {
-      '@': resolve('./src'),
-    }
-  }
+  }),
+  ]
 })
