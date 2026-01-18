@@ -106,7 +106,7 @@ const handleUpload = async () => {
     formData.append('file', selectedFile.value) // key 名根据后端要求调整，如 'avatar', 'document' 等
 
     try {
-        code.value = await request.post('/file/upload', formData, {
+        code.value = await request.post('/api/file/upload', formData, {
             params: {
                 maxDownloadCount: expireForm.value.maxDownloadCount,
                 expireValue: expireForm.value.expireValue,
